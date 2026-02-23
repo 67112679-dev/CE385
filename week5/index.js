@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
 
-// ต้องมีบรรทัดนี้เพื่อให้ Express อ่านข้อมูล JSON จาก body ได้ (ตามที่โจทย์สั่ง)
+// ต้องมีบรรทัดนี้เพื่อให้ Express อ่านข้อมูล JSON จาก body ได้ 
 app.use(express.json());
 
-// ข้อมูลนักศึกษาตั้งต้นตามโจทย์
+// ข้อมูลนักศึกษาตั้งต้น
 let students = [
     { id: 1, name: "Nutdanai", age: 26 },
     { id: 2, name: "Gitsada", age: 25 },
@@ -36,7 +36,7 @@ app.get('/students/:id', (req, res) => {
     }
 });
 
-// POST /students - เพิ่มนักศึกษาใหม่ (ข้อมูลส่งมาเป็น JSON)
+// POST /students - เพิ่มนักศึกษาใหม่ 
 app.post('/students', (req, res) => {
     const newStudent = {
         id: students.length > 0 ? students[students.length - 1].id + 1 : 1,
